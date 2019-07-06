@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "../../../../bin/teenytest \"test/**/*.js\""
+    "test": "../../../../bin/teenytest --test_locator=\"test/**/*.js\""
   },
   "author": "",
   "teenytest": {

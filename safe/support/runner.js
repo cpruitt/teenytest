@@ -7,6 +7,7 @@ var async = require('async')
 
 var store = require('../../lib/store')
 
+// TODO: figure out what ever calls this as a script?
 var globLocator = process.argv[2] || 'safe/*.js'
 var passing = false
 var uncaughtErrors = []
