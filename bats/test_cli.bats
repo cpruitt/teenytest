@@ -20,7 +20,7 @@ teardown() {
 #   Failed: 0
 #   Total:  0"
 
-  result="$(./bin/teenytest "./nothing/here/*")"
+  result="$(./bin/teenytest --test_locator="./nothing/here/*")"
 
   [ "$result" = "$expected" ]
 }
@@ -59,6 +59,22 @@ ok 6 - \"baz\" - test #2 in \`./bats/fixtures/some_folder/basic-test-passing-obj
 #   Total:  6"
 
   result="$(./bin/teenytest --test_locator=./bats/fixtures/**/*.js)"
+
+  [ "$result" = "$expected" ]
+}
+
+@test "when a glob is expanded by the shell ${DESCRIBE} uses all the paths to find files" {
+  # TODO: this really just proves that the expanded glob is being passed down to the app
+  expected="[ './bats/fixtures/another_folder/basic-test-passing-function.js',
+  './bats/fixtures/some_folder/basic-test-passing-object.js' ]
+TAP version 13
+1..0
+# Test run passed!
+#   Passed: 0
+#   Failed: 0
+#   Total:  0"
+
+  result="$(./bin/teenytest ./bats/fixtures/**/*.js)"
 
   [ "$result" = "$expected" ]
 }
