@@ -68,11 +68,12 @@ ok 6 - \"baz\" - test #2 in \`./bats/fixtures/some_folder/basic-test-passing-obj
   expected="[ './bats/fixtures/another_folder/basic-test-passing-function.js',
   './bats/fixtures/some_folder/basic-test-passing-object.js' ]
 TAP version 13
-1..0
+1..1
+ok 1 - test #1 in \`./bats/fixtures/another_folder/basic-test-passing-function.js\`
 # Test run passed!
-#   Passed: 0
+#   Passed: 1
 #   Failed: 0
-#   Total:  0"
+#   Total:  1"
 
   result="$(./bin/teenytest ./bats/fixtures/**/*.js)"
 
